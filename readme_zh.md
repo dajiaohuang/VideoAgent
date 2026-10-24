@@ -155,6 +155,11 @@ git clone https://github.com/HKUDS/VideoAgent.git
 conda create --name videoagent python=3.10
 conda activate videoagent
 conda install -y -c conda-forge pynini==2.1.5 ffmpeg
+# 可选：如需 CUDA 12.1 版 PyTorch wheel，请在安装项目依赖前执行。
+# --no-deps 将此索引限定于 torch 和 torchaudio。
+pip install --no-deps --force-reinstall --index-url https://download.pytorch.org/whl/cu121 torch==2.3.1 torchaudio==2.3.1
+
+# 常规依赖从 PyPI 安装。
 pip install -r requirements.txt
 ```
 

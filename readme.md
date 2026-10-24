@@ -260,6 +260,11 @@ git clone https://github.com/HKUDS/VideoAgent.git
 conda create --name videoagent python=3.10
 conda activate videoagent
 conda install -y -c conda-forge pynini==2.1.5 ffmpeg
+# Optional: run before the requirements for CUDA 12.1 PyTorch wheels.
+# --no-deps keeps this index scoped to torch and torchaudio.
+pip install --no-deps --force-reinstall --index-url https://download.pytorch.org/whl/cu121 torch==2.3.1 torchaudio==2.3.1
+
+# The main requirements resolve from PyPI.
 pip install -r requirements.txt
 ```
 
